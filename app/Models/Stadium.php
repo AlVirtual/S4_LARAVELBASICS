@@ -13,4 +13,9 @@ class Stadium extends Model
     public function team(){
         return $this->hasOne('App\Models\Team');
     }
+
+    //Relacion 1-1. Acceder al game. La llave foranea está en games.
+    public function game(){
+        return $this->hasOne('App\Models\Game');
+    }
 }

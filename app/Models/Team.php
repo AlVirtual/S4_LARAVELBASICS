@@ -21,6 +21,9 @@ class Team extends Model
     }
 
 
-
+    public function games(){
+        return $this->hasMany('App\Models\Games', 'team_id_L');
+        
+    }
 
 }
