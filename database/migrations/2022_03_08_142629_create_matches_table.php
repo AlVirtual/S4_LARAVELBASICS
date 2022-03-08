@@ -28,8 +28,8 @@ class CreateMatchesTable extends Migration
                     ->onUpdate('cascade')
                     ->onDelete('no action');
             
-            $table->tinyInteger('goals_local');
-            $table->tinyInteger('goals_visitor');
+            $table->tinyInteger('goals_local')->nullable();
+            $table->tinyInteger('goals_visitor')->nullable();
             
             $table->unsignedBigInteger('stadium_id');
             $table->foreign('stadium_id')->references('id')->on('stadia')
