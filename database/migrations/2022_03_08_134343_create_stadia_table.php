@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamsTable extends Migration
+class CreateStadiaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('stadia', function (Blueprint $table) {
             $table->id();
 
             $table->string('name',45);
-            $table->unsignedBigInteger('stadium_id')->unique()->nullable();
-
-            //llave Foraneas
-            $table->foreign('stadium_id')->references('id')->on('stadia')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->string('capacity');
             
             $table->timestamps();
         });
@@ -35,6 +30,6 @@ class CreateTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('stadia');
     }
 }
