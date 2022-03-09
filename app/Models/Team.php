@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Game;
 
 class Team extends Model
 {
@@ -21,9 +22,15 @@ class Team extends Model
     }
 
 
-    public function games(){
-        return $this->hasMany('App\Models\Games', 'team_id_L');
-        
+    //Relacion 1-n. Recupera games del team. Local y Visitante
+    public function gamesL(){
+        return $this->hasMany('App\Models\Game', 'local_team_id');
     }
+
+    public function gamesV(){
+        return $this->hasMany('App\Models\Game', 'visitor_team_id');
+    }
+
+
 
 }
