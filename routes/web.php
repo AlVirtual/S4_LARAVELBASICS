@@ -13,21 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
 Route::get('/', function () {
     //return view('welcome');
-    return "dashboard";
+    return "pagina principal";
+});
+//--------------------------- Routes STADIA ---------------------------------
+Route::get('stadia', function () {
+    return "pagina de estadios";
+});
+Route::get('stadia/{stadium}', function ($stadium) {
+    return "este es el estadio: $stadium";
 });
 
-Route::get('/aaa', function () {
-    //return view('welcome');
-    return "aaa";
-});
-
+//--------------------------- Routes PLAYERS ---------------------------------
 Route::get('players', function () {
-    return "bienvenido a la pagina jugadores";
+    return "pagina jugadores";
 });
 
-Route::get('jug' , function(){
-    return "holaqutal";
+Route::get('players/{player}', function ($player) {
+    return "este es el jugador: $player";
 });
+
+//--------------------------- Routes GAMES ---------------------------------
+Route::get('games', function () {
+    return "pagina de partidos";
+});
+
+Route::get('games/{game}', function ($game) {
+    return "detalles del partido: $game";
+});
+
+//--------------------------- Routes TEAMS ---------------------------------
+Route::get('teams', function () {
+    return "pagina de equipos";
+});
+
+Route::get('teams/{team}', function ($team) {
+    return "este es el equipo: $team";
+});
+
 
