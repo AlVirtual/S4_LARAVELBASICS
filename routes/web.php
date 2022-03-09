@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return "dashboard";
 });
+
+Route::get('/aaa', function () {
+    //return view('welcome');
+    return "aaa";
+});
+
+Route::get('players', function () {
+    return "bienvenido a la pagina jugadores";
+});
+
+Route::get('jug' , function(){
+    return "holaqutal";
+});
+
