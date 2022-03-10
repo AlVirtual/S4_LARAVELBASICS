@@ -28,9 +28,9 @@ Route::get('stadia/{id}', [StadiumController::class, 'show'])->name('stadia.show
 
 
 //--------------------------- Routes PLAYERS ---------------------------------
-Route::get('players', [PlayerController::class, 'index']); 
-Route::get('players/create', [PlayerController::class, 'create']);
-Route::get('players/{player}', [PlayerController::class, 'show']);
+Route::get('players', [PlayerController::class, 'index'])->name('players.index');
+Route::get('players/create', [PlayerController::class, 'create'])->name('players.create');
+Route::get('players/{id}', [PlayerController::class, 'show'])->name('players.show');
     
 
 //--------------------------- Routes GAMES ---------------------------------
