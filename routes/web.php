@@ -22,9 +22,9 @@ Route::get('/', HomeController::class);
 
    
 //--------------------------- Routes STADIA ---------------------------------
-Route::get('stadia', [StadiumController::class, 'index']);
-Route::get('stadia/create', [StadiumController::class, 'create']);
-Route::get('stadia/{stadium}', [StadiumController::class, 'show']);
+Route::get('stadia', [StadiumController::class, 'index'])->name('stadia.index');
+Route::get('stadia/create', [StadiumController::class, 'create'])->name('stadia.create');
+Route::get('stadia/{id}', [StadiumController::class, 'show'])->name('stadia.show');
 
 
 //--------------------------- Routes PLAYERS ---------------------------------
