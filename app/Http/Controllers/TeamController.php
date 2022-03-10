@@ -8,16 +8,16 @@ class TeamController extends Controller
 {
     //Mostrar pagina principal de teams
     public function index(){
-        return "Todos los equipos";
+        return view('teams.index');
     }
 
     //Mostrar pagina/formulario para crear un team
     public function create(){
-        return "puedes cear un equipo";
+        return view('teams.create');
     }
 
     //Mostrar pagina/elemento un team
     public  function show($team){
-        return "este es el equipo:$team";
+        return view('teams.show', compact('team'));
     }
 }
