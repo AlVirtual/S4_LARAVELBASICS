@@ -13,7 +13,7 @@ class StadiumFactory extends Factory
      * 
      * @var string
      */
-    protected $model = Stadium::class
+    protected $model = Stadium::class;
       
     
     /**
@@ -25,7 +25,7 @@ class StadiumFactory extends Factory
     {
         return [ 
             'name' => $this->faker->name(),
-            'capacity' => $this->faker->random(),
+            'capacity' => $this->faker->random()
             
         ];
     }
