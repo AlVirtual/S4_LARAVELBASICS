@@ -34,9 +34,9 @@ Route::get('players/{player}', [PlayerController::class, 'show']);
     
 
 //--------------------------- Routes GAMES ---------------------------------
-Route::get('games', [GameController::class, 'index']);
-Route::get('games/create', [GameController::class, 'create']);
-Route::get('games/{game}', [GameController::class, 'show']);
+Route::get('games', [GameController::class, 'index'])->name('games.index');
+Route::get('games/create', [GameController::class, 'create'])->name('games.create');
+Route::get('games/{id}', [GameController::class, 'show'])->name('games.show');
 
 
 //--------------------------- Routes TEAMS ---------------------------------
