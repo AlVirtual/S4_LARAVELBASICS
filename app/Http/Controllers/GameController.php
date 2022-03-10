@@ -8,16 +8,16 @@ class GameController extends Controller
 {
     //Mostrar pagina principal de games
     public function index(){
-        return "pagina de games";
+        return view('layouts.index');
     }
 
     //Mostrar pagina/formulario para crear un game
     public function create(){
-        return "puedes crear un game";
+        return view('layouts.create');
     }
 
     //Mostrar pagina/elemento un game
     public function show($game){
-        return "este es el estadio: $game";
+        return view('layouts.show', compact('game'));
     }
 }
