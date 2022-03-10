@@ -8,17 +8,17 @@ class PlayerController extends Controller
 {
     //Mostrar pagina principal de players
     public function index(){
-        return "pagina jugadores";
+        return view('players.index');
     }
 
     //Mostrar pagina/formulario para crear un player
     public function create(){
-        return "puedes crear un jugador";
+        return view('players.create');
     }
 
     //Mostrar pagina/elemento player
     public function show($player){
-        return "este es el jugador: $player";
+        return view('players.show', compact('player'));
     }
 }
 
