@@ -40,8 +40,8 @@ Route::get('games/{id}', [GameController::class, 'show'])->name('games.show');
 
 
 //--------------------------- Routes TEAMS ---------------------------------
-Route::get('teams', [TeamController::class, 'index']);
-Route::get('teams/create', [TeamController::class, 'create']);
-Route::get('teams/{team}', [TeamController::class, 'show']);
+Route::get('teams', [TeamController::class, 'index'])->name('teams.index');
+Route::get('teams/create', [TeamController::class, 'create'])->name('teams.create');
+Route::get('teams/{id}', [TeamController::class, 'show'])->name('teams.show');
 
 
