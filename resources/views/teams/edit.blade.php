@@ -1,13 +1,15 @@
 
 @extends('layouts.plantilla')
 
-@section('title', 'Team Create')
+@section('title','Team Edit')
     
 @section('content')
-    <h1>Aquí puedes crear un Team</h1>
-    <form action="{{ route('teams.store') }}" method="POST">
+    <h1>Aquí puedes editar un Team</h1>
+    <form action="{{ route('teams.update', $team) }}" method="POST">
 
         @csrf   {{-- genera token --}}
+
+        @method('put')
 
         <label for="">Nombre:</label>
         <br>

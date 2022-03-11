@@ -47,6 +47,8 @@ Route::get('games/{id}', [GameController::class, 'show'])->name('games.show');
 //--------------------------- Routes TEAMS ---------------------------------
 Route::get('teams', [TeamController::class, 'index'])->name('teams.index');
 Route::get('teams/create', [TeamController::class, 'create'])->name('teams.create');
+Route::post('teams', [TeamController::class, 'store'])->name('teams.store');
 Route::get('teams/{id}', [TeamController::class, 'show'])->name('teams.show');
-
+Route::get('teams/{id}/edit', [TeamController::class, 'edit'])->name('teams.edit');
+Route::put('teams/{team}', [TeamController::class, 'update'])->name('teams.update');
 
