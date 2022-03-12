@@ -43,8 +43,7 @@ class TeamController extends Controller
 
 
      //Editar pagina/elemento un team
-    public function edit($id){
-        $team = Team::find($id);
+    public function edit(Team $team){      
         $stadia = Stadium::all();
         return view('teams.edit', compact('team','stadia'));
     }
@@ -52,13 +51,18 @@ class TeamController extends Controller
 
     //Actualizar pagina/elemento un team
     public function update(Request $request, Team $team){
-        $stadia = Stadium::all();
-
+        
         $team->name = $request->name;
         $team->stadium_id = $request->stadium;
 
         $team->save();
         
         return redirect()->route('team.show', compact('team'));
+    }
+
+    //Eliminar pagina/elemento un team
+    public function destroy(Team $team )
+    {
+        $team->delete();
     }
 }

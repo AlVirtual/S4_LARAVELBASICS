@@ -13,15 +13,16 @@
 
         <label for="">Nombre:</label>
         <br>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{$team->name}}">
         <br>
 
         <label for="">Campo:</label>
         <br>
             <select name="stadium">
+                
                 @foreach ($stadia as $stadium)
-                    <option value="{{$stadium['id']}}">{{$stadium['name']}}</option>
-                @endforeach
+                    <option value="{{$stadium['id']}}">{{$team->stadium->name}}</option>
+                    @endforeach
             </select>
             @error('stadium')
                 <br>

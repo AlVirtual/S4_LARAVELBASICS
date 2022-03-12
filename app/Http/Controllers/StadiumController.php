@@ -52,6 +52,12 @@ class StadiumController extends Controller
         return redirect()->route('stadia.show', compact('stadium'));
     }
 
+    //Eliminar pagina/elemento un Stadium
+    public function destroy(Stadium $stadium)
+    {
+        $stadium->delete();
+    }
+
 
 
 }
