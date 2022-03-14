@@ -4,15 +4,21 @@
 @section('title','Stadia')
     
 @section('content')
-    <h1>Pagina principal de stadia</h1>
-    <a href="{{ route('stadia.create') }}">Crear Estadio</a>
-    <ul>
-        @foreach ($stadia as $stadium)
-            <li>
-                <a href="{{ route('stadia.show', $stadium->id) }}">{{$stadium->name}}</a>
-            </li>
-        @endforeach
-    </ul>
+
+<div class="py-8 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center sm:text-center">
+        <h1 class="text-3xl text-lime-600 font-bold tracking-wide uppercase">
+              Pàgina d'Estadis
+        </h1>
+      </div>
+    </div>
+  </div>
+<div>
+  <a href="{{ route('stadia.create') }}"><button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-lime-100 bg-lime-600">
+      Crear Estadi
+    </button></a>
+</div>
 
 <div class="bg-white p-8 rounded-md w-full">
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -23,71 +29,69 @@
 
               <th
                 class="w-1/2 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                Tasca
+                Nom Estadi
               </th>
               <th
-                class="w-1/2 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                Descripció
+                class="px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                Capacitat
               </th>
               <th
-                class="w-1/2 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                Estat
+                class="px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                Equip
               </th>
               <th
-                class="w-1/2 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                class="w-8 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Editar
               </th>
               <th
-                class="w-1/2 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                class="w-8 px-5 py-3 border-b-2 border-gray-200 bg-indigo-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Esborrar
               </th>
             </tr>
           </thead>
 
           <tbody>
+            @foreach ($stadia as $stadium)
             <tr>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">                    
-                    <?php echo @$tasca['taskName'];?>
+                  <a href="{{ route('stadia.show', $stadium->id) }}">{{$stadium->name}}</a>
                 </p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">                    
-                    <?php echo @$tasca['taskDescription'];?>
+                  <a href="{{ route('stadia.show', $stadium->id) }}">{{$stadium->capacity}}</a>
                 </p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                  <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                  <span class="relative"><?php echo @$tasca['taskStatus'];?></span>
-                </span>
+                  <p class="text-gray-900 whitespace-no-wrap"> 
+                  <a href="{{ route('stadia.show', $stadium->id) }}">{{$stadium->team->name}}</a>
+                  </p>
               </td>          
 
-              <td class="px-7 py-5 border-b border-gray-200 bg-white text-sm">
-              <form method="post" action="../controllers/c_control.php">              
-                  <input type="hidden" id="accio" name="accio" value="modificar">
-                  <input type="hidden" id="id" name="id" value="<?php echo @$tasca['idTask'];?>">
-                  <button
-                                type="submit"
-                                class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
-                              >
-                                Modificar
-                  </button>
-              </form>   
+              <td class="px-7 py-5 border-b border-gray-200 bg-white text-sm"> 
+                <button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold">
+                  <a href={{ route('stadia.edit', $stadium) }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  </a>
+                </button> 
               </td>
               <td class="px-7 py-5 border-b border-gray-200 bg-white text-sm ">
-              <form method="post" action="../controllers/c_control.php">              
-                  <input type="hidden" id="accio" name="accio" value="esborrar">
-                  <input type="hidden" id="id" name="id" value="<?php echo @$tasca['idTask'];?>">
-                  <button
-                                type="submit"
-                                class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
-                              >
-                                Esborrar
+                <button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold">
+                  <a href={{ route('stadia.destroy', $stadium) }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                  </a>
                   </button>
-              </form>
+              
               </td>
-            </tr>       
+            </tr>  
+            @endforeach     
           </tbody>
         </table>
       </div>
