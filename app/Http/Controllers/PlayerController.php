@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Player;
 use Illuminate\Http\Request;
+use App\Models\Team;
+use App\Models\Stadium;
 
 class PlayerController extends Controller
 {
@@ -15,7 +17,23 @@ class PlayerController extends Controller
 
     //Mostrar pagina/formulario para crear un player
     public function create(){
-        return view('players.create');
+        $teams = Team::all();
+        return view('players.create', compact('teams'));
+    }
+
+    //Metodo store para guardar datos en db
+    public function store(Request $request){
+        $player = new Team();
+
+        $player->name = $request->name;
+        $player->surname = $request->surname;
+        $player->age = $request->age;
+        $player->team_id = $request->team;
+
+        
+        $player->save();
+        return redirect()->route('players.show', $player);
+
     }
 
     //Mostrar pagina/elemento player
@@ -23,5 +41,31 @@ class PlayerController extends Controller
         $player = Player::find($id);
         return view('players.show', compact('player'));
     }
+
+         //Editar pagina/elemento un player
+         public function edit(Player $player){      
+            $teams = Team::all();
+            return view('players.edit', compact('player','teams'));
+        }
+    
+    
+        //Actualizar pagina/elemento un team
+        public function update(Request $request, Player $player){
+            
+            $player->name = $request->name;
+            $player->surname = $request->surname;
+            $player->age = $request->age;
+            $player->team_id = $request->team;
+    
+            $player->save();
+            
+            return redirect()->route('players.show', compact('player'));
+        }
+    
+        //Eliminar pagina/elemento un team
+        public function destroy(Player $player )
+        {
+            $player->delete();
+        }
 }
 

@@ -59,4 +59,4 @@ Route::post('teams', [TeamController::class, 'store'])->name('teams.store');
 Route::get('teams/{id}', [TeamController::class, 'show'])->name('teams.show');
 Route::get('teams/{team}/edit', [TeamController::class, 'edit'])->name('teams.edit');
 Route::put('teams/{team}', [TeamController::class, 'update'])->name('teams.update');
-Route::delete('teams/{team}', [STeamController::class, 'destroy'])->name('teams.destroy');
+Route::delete('teams/{team}', [TeamController::class, 'destroy'])->name('teams.destroy');

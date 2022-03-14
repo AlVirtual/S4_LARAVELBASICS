@@ -57,7 +57,7 @@ class TeamController extends Controller
 
         $team->save();
         
-        return redirect()->route('team.show', compact('team'));
+        return redirect()->route('teams.show', compact('team'));
     }
 
     //Eliminar pagina/elemento un team

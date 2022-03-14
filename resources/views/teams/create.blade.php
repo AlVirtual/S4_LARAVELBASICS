@@ -7,7 +7,7 @@
     <div class="py-8 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="lg:text-center sm:text-center">
-            <h1 class="text-lg text-lime-600 font-bold tracking-wide uppercase">
+            <h1 class="text-3xl text-lime-600 font-bold tracking-wide uppercase">
                 Crea un nou equip
             </h1>
           </div>

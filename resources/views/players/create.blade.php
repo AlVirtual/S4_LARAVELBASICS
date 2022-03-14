@@ -7,7 +7,7 @@
     <div class="py-8 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="lg:text-center sm:text-center">
-            <h1 class="text-lg text-lime-600 font-bold tracking-wide uppercase">
+            <h1 class="text-3xl text-lime-600 font-bold tracking-wide uppercase">
                 Crea un nou jugador
             </h1>
           </div>
@@ -27,27 +27,30 @@
                             <br>
                             <input type="text" name="name" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
                         </div>
+                        <div class="w-1/8">
+                            <label for="">
+                                Cognom del Jugador:
+                            </label>
+                            <br>
+                            <input type="text" name="surname" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
+                        </div>
                         <div class="w-1/6">
                             <label for="">
                                 Edat:
                             </label>
                             <br>
-                            <input type="text" name="name" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
+                            <input type="number" name="age" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
                         </div>
                         <div class="w-1/8">    
                             <label for="">
                                 Equip al que pertany:
                             </label>   
                             <br>
-                            <select name="player" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">
-{{--                                  @foreach ($teams as $team)
-                                <option value="{{$team['id']}}">{{$team['name']}}</option>
-                                 @endforeach --}}
+                            <select name="team" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">
+                                  @foreach ($teams as $team)
+                                <option value="{{$team->id}}">{{$team->name}}</option>
+                                 @endforeach 
                             </select>
-                                @error('team')
-                                <br>
-                                <small>*{{$message}}</small>
-                                @enderror   
                         </div>
                         <div>
                             <br>
