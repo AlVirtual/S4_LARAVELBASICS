@@ -48,7 +48,7 @@
                                 Equip al que pertany:
                             </label>   
                             <br>
-                            <select name="player" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">
+                            <select name="team" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">
                                   @foreach ($teams as $team)
                                 <option value="{{$team->id}}" {{ $team->id==$player->team_id ? 'selected' : '' }}>{{$team->name}}</option>
                                  @endforeach 

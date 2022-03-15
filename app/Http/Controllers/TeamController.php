@@ -50,7 +50,7 @@ class TeamController extends Controller
 
 
     //Actualizar pagina/elemento un team
-    public function update(Request $request, Team $team){
+    public function update(StoreTeamRequest $request, Team $team){
         
         $team->name = $request->name;
         $team->stadium_id = $request->stadium;
