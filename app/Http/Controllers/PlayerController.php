@@ -23,7 +23,7 @@ class PlayerController extends Controller
 
     //Metodo store para guardar datos en db
     public function store(Request $request){
-        $player = new Team();
+        $player = new Player();
 
         $player->name = $request->name;
         $player->surname = $request->surname;

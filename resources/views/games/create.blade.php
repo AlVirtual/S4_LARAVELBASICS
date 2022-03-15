@@ -35,7 +35,7 @@
                             <br>
                             <select name="teamL" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
                                 @foreach ($teams as $team)
-                                <option value="{{$team->id}}" ></option>
+                                <option value="{{$team->id}}" >{{$team->name}}</option>
                                  @endforeach
                             </select>
                             </div>
@@ -46,7 +46,7 @@
                             <br>
                             <select name="teamV" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
                                 @foreach ($teams as $team)
-                                <option value="{{$team->id}}" ></option>
+                                <option value="{{$team->id}}" >{{$team->name}}</option>
                                  @endforeach
                             </select>
                             </div>
@@ -57,7 +57,7 @@
                             <br>
                             <select name="stadium" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">
                                   @foreach ($stadia as $stadium)
-                                <option value="{{$stadium->id}}" ></option>
+                                <option value="{{$stadium->id}}" >{{$stadium->name}}</option>
                                  @endforeach 
                             </select>
                         </div>

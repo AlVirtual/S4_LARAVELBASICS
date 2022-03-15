@@ -16,7 +16,7 @@
     <div class="bg-white px-8 rounded-md w-full">
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="bg-lime-50 min-w-full shadow rounded-lg overflow-hidden">
-                <form action="{{ route('stadia.store') }}" method="POST">
+                <form action="{{ route('teams.store') }}" method="POST">
                     @csrf   {{-- genera token --}}
                     <div class="px-4 max-w-3xl mx-auto space-y-4 bg-lime-50 py-2">
                         <div class="w-1/8">

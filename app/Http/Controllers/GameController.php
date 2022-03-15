@@ -25,9 +25,9 @@ class GameController extends Controller
 
         //Metodo store para guardar datos en db
         public function store(Request $request){
-            $game = new Team();
+            $game = new Game();
     
-            $game->name = $request->date;
+            $game->date = $request->date;
             $game->local_team_id = $request->teamL;
             $game->visitor_team_id = $request->teamV;
             $game->stadium_id = $request->stadium;
@@ -54,7 +54,7 @@ class GameController extends Controller
                 //Actualizar pagina/elemento un game
                 public function update(Request $request, Game $game){
                                   
-                    $game->name = $request->date;
+                    $game->date = $request->date;
                     $game->local_team_id = $request->teamL;
                     $game->visitor_team_id = $request->teamV;
                     $game->goals_local = $request->goalsL;
