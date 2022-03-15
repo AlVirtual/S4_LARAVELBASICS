@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Stadium;
+
 use Illuminate\Database\Seeder;
+
 
 class StadiumSeeder extends Seeder
 {

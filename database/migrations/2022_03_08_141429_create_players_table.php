@@ -19,7 +19,7 @@ class CreatePlayersTable extends Migration
             $table->string('name',45);
             $table->string('surname',45);
             $table->string('age',2);
-            $table->unsignedBigInteger('team_id')->unique()->nullable();
+            $table->unsignedBigInteger('team_id')->nullable();
             
             //llave foranea
             
