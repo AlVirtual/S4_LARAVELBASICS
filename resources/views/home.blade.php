@@ -3,10 +3,7 @@
 
 @section('title','Home')
     
-@section('content')
-    <h1></h1>
-
-    
+@section('content') 
 
     <div class="mx-auto container py-20 px-6">
         
@@ -14,16 +11,15 @@
          @foreach ($teams as $team)   
             <div
                 class="w-full h-64 flex flex-col justify-between bg-lime-100 rounded-lg mb-6 py-5 px-4 hover:scale-105 transition duration-700 hover:shadow-2xl shadow-black">
-                <div>
-                    <p class="text-sm">{{$team->name}}Inici 12:00 / Final 13:00</p>
-                    <h4 class="text-gray-800  font-bold mb-3">{{$team->name}}</h4>
+                <div class= "text-center ">
+                    
+                    <h1 class="text-gray-800 text-3xl font-bold mb-3 self-center py-12">{{$team->name}}</h1>
                     <p class="text-gray-800  text-sm"></p>
                 </div>
                 <div>
                     <div class="flex items-center justify-end ">
-                        <button>
-
-                        verue equip
+                        <button> <a href="{{route ('teams.show',$team->id)}}">
+                        verue equip</a>
                         </button>
                     </div>
                 </div>

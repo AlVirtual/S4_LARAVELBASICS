@@ -5,21 +5,26 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-xl lg:flex-grow">
-        <a href="{{route('home')}}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+        <a href="{{route('home')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
             Home
           </a>
-        <a href="{{route('teams.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+        <a href="{{route('teams.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
           Equips
         </a>
-        <a href="{{route('stadia.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+        <a href="{{route('stadia.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
           Estadis
         </a>
-        <a href="{{route('players.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+        <a href="{{route('players.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
           Jugadors
         </a>
-        <a href="{{route('games.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+        <a href="{{route('games.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
           Partits
         </a>
       </div>
     </div>
   </nav>
+
+  
+
+  
+  
