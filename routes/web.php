@@ -18,7 +18,7 @@ use App\Http\Controllers\TeamController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
    
 //--------------------------- Routes STADIA ---------------------------------

@@ -4,31 +4,21 @@
 @section('title','Games')
     
 @section('content')
-    <h1>Pagina principal de Games</h1>
-    <ul>
-        @foreach ($games as $game)
-        <li>
-            <a href="{{ route('games.show', $game->id) }}">{{$game->id . $game->date . $game->teamL->name . ' vrs '.$game->teamV->name}}</a>
-        </li>   
-        @endforeach
-        
-    </ul>
-    <a href="{{ route('games.create') }}">Crear Partido</a>
 
     <div class="py-8 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="lg:text-center sm:text-center">
-              <h1 class="text-3xl text-lime-600 font-bold tracking-wide uppercase">
-                    Pàgina de Partits
-              </h1>
-            </div>
-          </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center sm:text-center">
+            <h1 class="text-3xl text-lime-600 font-bold tracking-wide uppercase">
+                 Pàgina de Partits
+            </h1>
         </div>
-      <div>
-            <a href="{{ route('games.create') }}"><button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-lime-100 bg-lime-600">
-            Crear Partit
-          </button></a>
       </div>
+    </div>
+    <div>
+        <a href="{{ route('games.create') }}"><button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-lime-100 bg-lime-600">
+            Crear Partit
+        </button></a>
+    </div>
       
       <div class="bg-white p-8 rounded-md w-full">
           <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
