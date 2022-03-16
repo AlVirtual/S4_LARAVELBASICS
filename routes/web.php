@@ -38,7 +38,7 @@ Route::post('players', [PLayerController::class, 'store'])->name('players.store'
 Route::get('players/{player}', [PlayerController::class, 'show'])->name('players.show');
 Route::get('players/{player}/edit', [PlayerController::class, 'edit'])->name('players.edit');
 Route::put('players/{player}', [PlayerController::class, 'update'])->name('players.update');
-Route::delete('players/{player}', [PaayerController::class, 'destroy'])->name('players.destroy');
+Route::delete('players/{player}', [PlayerController::class, 'destroy'])->name('players.destroy');
 
 
 

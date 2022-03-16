@@ -56,8 +56,7 @@ class StadiumController extends Controller
     public function destroy(Stadium $stadium)
     {
         $stadium->delete();
+        return redirect()->route('stadia.index');
     }
-
-
 
 }
