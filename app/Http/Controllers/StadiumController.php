@@ -62,7 +62,9 @@ class StadiumController extends Controller
             return redirect()->route('stadia.index');
             
         }else{
-        return $stadium->name.' te partits assignats';
+            
+            return redirect()->route('stadia.index')->with('message', 'l\'estadi '. $stadium->name .' té partits assignats');
+
         }
 
     }

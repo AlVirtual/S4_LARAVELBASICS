@@ -19,6 +19,9 @@
       Crear Estadi
     </button></a>
 </div>
+<div class="pt-4 lg:text-center sm:text-center text-red-700">
+  @if (session('message')) {{ session('message') }} </div> @endif
+</div>
 
 <div class="bg-white p-8 rounded-md w-full">
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">

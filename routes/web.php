@@ -31,6 +31,7 @@ Route::put('stadia/{stadium}', [StadiumController::class, 'update'])->name('stad
 Route::delete('stadia/{stadium}', [StadiumController::class, 'destroy'])->name('stadia.destroy');
 
 
+
 //--------------------------- Routes PLAYERS ---------------------------------
 Route::get('players', [PlayerController::class, 'index'])->name('players.index');
 Route::get('players/create', [PlayerController::class, 'create'])->name('players.create');

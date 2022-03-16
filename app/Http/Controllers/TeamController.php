@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreTeamRequest;
 use App\Models\Team;
 use App\Models\Stadium;
+use App\Models\Game;
 
 class TeamController extends Controller
 {
@@ -61,11 +62,20 @@ class TeamController extends Controller
     }
 
     //Eliminar pagina/elemento un team
-    public function destroy(Team $team )
+    public function destroy(Team $team)
     {
-
+        // comprovar si l'equip existeix en la taula partits per borrar-lo o no
+        $teamgamesL = Game::where('local_team_id',$team->id)->first();
+        $teamgamesV = Game::where('visitor_team_id',$team->id)->first();
         
-        $team->delete();
-        return redirect()->route('teams.index');
+        if(!$teamgamesL && !$teamgamesV){
+            $team->delete();
+            return redirect()->route('teams.index');
+            
+        }else{
+   
+            return redirect()->route('teams.index')->with('message', 'l\'equip '. $team->name .' té partits assignats');
+        }
+
     }
 }
