@@ -27,6 +27,6 @@ class Game extends Model
     }
 
 
-
+    
 
 }

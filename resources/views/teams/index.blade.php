@@ -56,7 +56,7 @@
                     </td>
                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p class="text-gray-900 whitespace-no-wrap">                    
-                        <a href={{ route('teams.show', $team->id) }}>{{$team->stadium->name}} </a>
+                        <a href={{ route('teams.show', $team->id) }}>{{$team->stadium->name ?? '(sense estadi asignat)'}} </a>
                       </p>
                     </td>   
                     <td class="px-7 py-5 border-b border-gray-200 bg-white text-sm"> 

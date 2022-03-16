@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stadium;
+use App\Models\Game;
 use Illuminate\Http\Request;
 
 class StadiumController extends Controller
@@ -53,10 +54,17 @@ class StadiumController extends Controller
     }
 
     //Eliminar pagina/elemento un Stadium
-    public function destroy(Stadium $stadium)
-    {
-        $stadium->delete();
-        return redirect()->route('stadia.index');
+    public function destroy(Stadium $stadium){
+        
+        $stadiumgames = Game::where('stadium_id',$stadium->id)->first();
+        if(!$stadiumgames){
+            $stadium->delete();
+            return redirect()->route('stadia.index');
+            
+        }else{
+        return $stadium->name.' te partits assignats';
+        }
+
     }
 
 }

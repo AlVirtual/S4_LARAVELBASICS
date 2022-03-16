@@ -63,6 +63,8 @@ class TeamController extends Controller
     //Eliminar pagina/elemento un team
     public function destroy(Team $team )
     {
+
+        
         $team->delete();
         return redirect()->route('teams.index');
     }
