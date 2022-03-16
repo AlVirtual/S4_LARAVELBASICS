@@ -64,5 +64,6 @@ class TeamController extends Controller
     public function destroy(Team $team )
     {
         $team->delete();
+        return redirect()->route('teams.index');
     }
 }

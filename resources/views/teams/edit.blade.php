@@ -28,7 +28,7 @@
                                 Nom del Equip:
                             </label>
                             <br>
-                            <input type="text" name="name" value="{{$team->name}}" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
+                            <input type="text" name="name" value="{{old('name', $team->name)}}" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">   
                         </div>
                         <div class="w-1/8">    
                             <label for="">
@@ -37,7 +37,7 @@
                             <br>
                             <select name="stadium" class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm">
                                 @foreach ($stadia as $stadium)
-                                <option value="{{$stadium->id}}" {{$stadium->id==}}>{{$stadium->name}}</option>
+                                <option value="{{$stadium->id}}" >{{$stadium->name}}</option>
                                 @endforeach
                             </select>
                                 @error('stadium')

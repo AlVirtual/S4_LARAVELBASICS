@@ -24,6 +24,7 @@ class StoreTeamRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
             'stadium' => 'unique:teams,stadium_id',
         ];
     }
@@ -33,7 +34,8 @@ class StoreTeamRequest extends FormRequest
     public function messages(){
        
         return[
-            'stadium.unique' => 'El campo pertenece a otro equipo.'
+            'name.required' => 'El nom és obligatori',
+            'stadium.unique' => 'El camp està asignat a un altre equip.'
                                 
         ];
         
