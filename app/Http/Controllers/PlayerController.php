@@ -37,35 +37,38 @@ class PlayerController extends Controller
     }
 
     //Mostrar pagina/elemento player
-    public function show($id){
-        $player = Player::find($id);
-        return view('players.show', compact('player'));
+    public function show(Player $player){
+        /* $player = Player::find($id); */
+        $teams = Team::all();
+        return view('players.show', compact('player','teams'));
     }
 
-         //Editar pagina/elemento un player
-         public function edit(Player $player){      
-            $teams = Team::all();
-            return view('players.edit', compact('player','teams'));
-        }
+    //Editar pagina/elemento un player
+    public function edit(Player $player){      
+       $teams = Team::all();
+       return view('players.edit', compact('player','teams'));
+    }
     
     
-        //Actualizar pagina/elemento un team
-        public function update(Request $request, Player $player){
-            
-            $player->name = $request->name;
-            $player->surname = $request->surname;
-            $player->age = $request->age;
-            $player->team_id = $request->team;
+    //Actualizar pagina/elemento un team
+    public function update(Request $request, Player $player){
+        
+        $player->name = $request->name;
+        $player->surname = $request->surname;
+        $player->age = $request->age;
+        $player->team_id = $request->team;
+
+        $player->save();
+        
+        return redirect()->route('players.show', compact('player'));
+    }
     
-            $player->save();
-            
-            return redirect()->route('players.show', compact('player'));
-        }
+    //Eliminar pagina/elemento un team
+    public function destroy(Player $player )
+    {
+        $player->delete();
+        return redirect()->route('players.index');
+    }
     
-        //Eliminar pagina/elemento un team
-        public function destroy(Player $player )
-        {
-            $player->delete();
-        }
 }
 

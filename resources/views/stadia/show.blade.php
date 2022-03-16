@@ -16,7 +16,7 @@
         <div class="bg-lime-50 min-w-full shadow rounded-lg overflow-hidden">
             <div class="px-4 max-w-3xl mx-auto space-y-4 bg-lime-50 py-2">
                 <p class="text-xl"> Capacitat:<strong> {{$stadium->capacity}} espectadors</strong></p>
-                <p class="text-xl"> Equip al que pertany: <strong>{{$stadium->team->name}}</strong></p>
+                <p class="text-xl"> Equip al que pertany: <strong>{{$stadium->team->name ?? '(sense equip asignat)'}}</strong></p>
             </div>
         </div>
     </div>

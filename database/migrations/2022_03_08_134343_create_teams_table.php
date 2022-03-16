@@ -22,7 +22,7 @@ class CreateTeamsTable extends Migration
             //llave Foraneas
             $table->foreign('stadium_id')->references('id')->on('stadia')
                 ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->onDelete('set null');
             
             $table->timestamps();
         });
