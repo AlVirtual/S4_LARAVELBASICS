@@ -20,7 +20,7 @@ use App\Http\Controllers\TeamController;
 
 Route::get('/', HomeController::class)->name('home');
 
-   
+
 //--------------------------- Routes STADIA ---------------------------------
 Route::get('stadia', [StadiumController::class, 'index'])->name('stadia.index');
 Route::get('stadia/create', [StadiumController::class, 'create'])->name('stadia.create');

@@ -1,30 +1,39 @@
-<nav class="flex items-center justify-between flex-wrap bg-lime-600 p-6">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-      <span class="font-semibold text-xl tracking-tight"></span>
+
+<nav class="bg-lime-700">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <a href="{{ route('home') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+  
+              <a href="{{ route('teams.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white px-3 py-2 rounded-md text-base  font-medium">Equips</a>
+  
+              <a href="{{ route('stadia.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white px-3 py-2 rounded-md text-base  font-medium">Estadis</a>
+  
+              <a href="{{ route('players.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white px-3 py-2 rounded-md text-base  font-medium">Jugadors</a>
+
+              <a href="{{ route('games.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white px-3 py-2 rounded-md text-base  font-medium">Partits</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div class="text-xl lg:flex-grow">
-        <a href="{{route('home')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
-            Home
-          </a>
-        <a href="{{route('teams.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
-          Equips
-        </a>
-        <a href="{{route('stadia.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
-          Estadis
-        </a>
-        <a href="{{route('players.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
-          Jugadors
-        </a>
-        <a href="{{route('games.index')}}" class="block mt-4 lg:inline-block lg:mt-0 md:inline-block text-white hover:text-white mr-4">
-          Partits
-        </a>
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+  
+        <a href="{{ route('home') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+  
+        <a href="{{ route('teams.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Equips</a>
+  
+        <a href="{{ route('stadia.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Estadis</a>
+  
+        <a href="{{ route('players.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Jugadors</a>
+
+        <a href="{{ route('games.index') }}" class="text-gray-100 hover:bg-lime-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Partits</a>
       </div>
     </div>
   </nav>
-
-  
-
-  
   

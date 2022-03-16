@@ -31,13 +31,13 @@ class StoreTeamRequest extends FormRequest
 
 
 
-    public function messages(){
-       
-        return[
+    public function messages()
+    {
+
+        return [
             'name.required' => 'El nom és obligatori',
             'stadium.unique' => 'El camp està asignat a un altre equip.'
-                                
+
         ];
-        
     }
 }
